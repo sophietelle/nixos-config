@@ -2,7 +2,7 @@
   description = "Sophie's NixOS flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
     # If you're wondering why there's inputs.nixpkgs.follows:
     # Every flake has a lock file. It fixes the version of each input, including nixpkgs.
@@ -11,8 +11,8 @@
     # But we can make our inputs __follow__ the version of our nixpkgs - eliminating the
     # duplication and simultaneously having the newest possible versions of packages if
     # they are used in another input flake.
-    home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
-    stylix = { url = "github:nix-community/stylix"; inputs.nixpkgs.follows = "nixpkgs"; };
+    home-manager = { url = "github:nix-community/home-manager/release-25.11"; inputs.nixpkgs.follows = "nixpkgs"; };
+    stylix = { url = "github:nix-community/stylix/release-25.11"; inputs.nixpkgs.follows = "nixpkgs"; };
     ida-pro = { url = "path:./packages/ida-pro"; inputs.nixpkgs.follows = "nixpkgs"; };
   };
 
@@ -71,6 +71,7 @@
           ./machine-specific/broadcom-bt.nix
           ./machine-specific/external-mounts.nix
           ./machine-specific/nvidia.nix
+          ./machine-specific/keyboard-udev.nix
           ./machine-specific/sound-latency.nix
           # ./machine-specific/kernel-tweaks.nix
         ];

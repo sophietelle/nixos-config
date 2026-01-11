@@ -6,6 +6,8 @@ let
   shouldUse = osConfig.networking.hostName == "laptop";
 in
 {
+  programs.zed-editor.enable = true;
+
   home.packages = lib.mkIf shouldUse (with pkgs; [
     gh
     android-tools
@@ -14,7 +16,6 @@ in
     telegram-desktop
     vesktop
     spotify
-    zed-editor
     transmission_4-qt
     osu-lazer-bin
 

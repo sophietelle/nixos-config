@@ -55,10 +55,7 @@ in
       };
     };
 
-    # ensure WirePlumber is enabled explicitly
-    # and write extra config to ship low latency rules for alsa
     wireplumber = {
-      enable = true;
       extraConfig = {
         "99-alsa-lowlatency"."monitor.alsa.rules" = [
           {
