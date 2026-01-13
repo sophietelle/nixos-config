@@ -11,6 +11,7 @@ in
   home.packages = lib.mkIf shouldUse (with pkgs; [
     gh
     android-tools
+    scrcpy
 
     ida-pro
     telegram-desktop
