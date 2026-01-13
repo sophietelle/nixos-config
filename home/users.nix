@@ -23,6 +23,7 @@ in
       ./fastfetch.nix
       ./fuzzel.nix
       ./waybar.nix
+      ./zed.nix
       ./additional-apps.nix # Comment this out if you don't want none of my bloat
     ];
 
