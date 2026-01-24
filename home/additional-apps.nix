@@ -25,6 +25,7 @@ in
   };
 
   home.packages = lib.mkIf shouldUse (with pkgs; [
+    winbox4
     gh
     android-tools
     scrcpy
