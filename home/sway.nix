@@ -87,6 +87,8 @@ in
       # but nothing happens
       bindkeysToCode = true;
 
+      defaultWorkspace = "workspace number 1";
+
       keybindings = {
         "${mod}+q" = "exec ${terminal}";
         "${mod}+e" = "exec ${explorer}";
