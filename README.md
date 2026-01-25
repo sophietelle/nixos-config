@@ -12,7 +12,7 @@ Though it is very simple, I actually daily-drive it.
   - Theming: mostly Stylix
 - WM/Compositor: Sway
 - Terminal: Alacritty
-- Bar: Waybar
+- Bar: Quickshell (Waybar config also present)
 - File explorer: Thunar
 - Launcher: fuzzel
 
