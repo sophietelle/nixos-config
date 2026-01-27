@@ -30,6 +30,8 @@ in
     android-tools
     scrcpy
 
+    steam
+
     ida-pro
     telegram-desktop
     vesktop
