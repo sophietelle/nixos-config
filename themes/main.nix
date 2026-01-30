@@ -26,8 +26,8 @@
       base0F = "E394DC";
     };
 
-    opacity.terminal = 0.5;
-    opacity.popups = 0.5;
+    opacity.terminal = 0.6;
+    opacity.popups = 0.6;
 
     cursor = {
       name = "Posy_Cursor";
