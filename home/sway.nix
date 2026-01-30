@@ -16,7 +16,7 @@ let
   wallpaper = toString ../wallpapers/v3.png;
 
   screenshot = "grimshot copy screen";
-  windowshot = "grimshot copy window";
+  windowshot = "grimshot copy anything";
 in
 {
   home.packages = with pkgs; [
