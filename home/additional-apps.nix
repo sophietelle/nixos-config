@@ -6,6 +6,10 @@ let
   shouldUse = osConfig.networking.hostName == "laptop";
 in
 {
+  imports = [
+    ./osu.nix
+  ];
+
   programs.obs-studio = {
     enable = true;
 
@@ -39,7 +43,6 @@ in
     vesktop
     spotify
     transmission_4-qt
-    osu-lazer-bin
 
     kdePackages.qtdeclarative
 
