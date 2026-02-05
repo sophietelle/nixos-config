@@ -11,6 +11,7 @@
     # But we can make our inputs __follow__ the version of our nixpkgs - eliminating the
     # duplication and simultaneously having the newest possible versions of packages if
     # they are used in another input flake.
+    nix-gaming = { url = "github:fufexan/nix-gaming"; inputs.nixpkgs.follows = "nixpkgs"; };
     nix-cachyos-kernel = { url = "github:xddxdd/nix-cachyos-kernel/release"; inputs.nixpkgs.follows = "nixpkgs"; };
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
     stylix = { url = "github:nix-community/stylix"; inputs.nixpkgs.follows = "nixpkgs"; };

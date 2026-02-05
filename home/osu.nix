@@ -1,9 +1,10 @@
 # Sophie: https://git.pompy.dev/pomp/.dotfiles/src/commit/86717a4b621e6aa377a3cf68e69344acdd986984/modules/home-manager/osu.nix
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   home.packages = with pkgs; [
     osu-lazer-bin
+    inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-stable
   ];
 
   home.file.".local/share/applications/osu.desktop".text = ''
