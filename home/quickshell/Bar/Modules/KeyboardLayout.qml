@@ -26,7 +26,7 @@ StyledText {
   }
 
   Timer {
-    interval: 50
+    interval: 100
     running: true
     repeat: true
 
