@@ -22,7 +22,7 @@
       sway = {
         prettyName = "Sway";
         comment = "Sway compositor managed by UWSM";
-        binPath = "${pkgs.sway}/bin/sway";
+        binPath = "${pkgs.swayfx}/bin/sway";
         extraArgs = ["--unsupported-gpu"];
       };
     };

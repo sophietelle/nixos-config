@@ -30,6 +30,8 @@ in
     xwayland = true;
     checkConfig = false;
 
+    package = pkgs.swayfx;
+
     config = {
       modifier = mod;
 
@@ -59,10 +61,10 @@ in
 
       window = {
         titlebar = false;
-        border = 1;
+        border = 2;
       };
 
-      floating.border = 1;
+      floating.border = 2;
 
       # Fixes issues when you press Mod + й (russian equivalent of Mod + q)
       # but nothing happens
@@ -125,30 +127,30 @@ in
       colors = {
         focused = {
           background = "#18191b";
-          border = "#ffffff";
-          childBorder = "#ffffff";
-          indicator = "#ffffff";
+          border = "#4D4E51";
+          childBorder = "#4D4E51";
+          indicator = "#4D4E51";
           text = "#e0e1e4";
         };
         focusedInactive = {
           background = "#18191b";
-          border = "#ffffff";
-          childBorder = "#ffffff";
-          indicator = "#ffffff";
+          border = "#4D4E51";
+          childBorder = "#4D4E51";
+          indicator = "#4D4E51";
           text = "#e0e1e4";
         };
         unfocused = {
           background = "#18191b";
-          border = "#ffffff00";
-          childBorder = "#ffffff00";
-          indicator = "#ffffff00";
+          border = "#4D4E5100";
+          childBorder = "#4D4E5100";
+          indicator = "#4D4E5100";
           text = "#e0e1e4";
         };
         placeholder = {
           background = "#18191b";
-          border = "#ffffff";
-          childBorder = "#ffffff";
-          indicator = "#ffffff";
+          border = "#4D4E51";
+          childBorder = "#4D4E51";
+          indicator = "#4D4E51";
           text = "#e0e1e4";
         };
         urgent = {
@@ -162,23 +164,38 @@ in
 
       bars = [];
     };
+
+    extraConfig = ''
+       default_dim_inactive 0.8
+       dim_inactive_colors.unfocused #00000088
+
+       corner_radius 9
+
+       shadows enable
+       shadow_color #000000FF
+       shadow_inactive_color #00000000
+
+       shadow_offset 0 0
+       shadow_blur_radius 20
+    '';
   };
 
   # Screencasting
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-wlr ];
+    extraPortals = with pkgs; [ xdg-desktop-portal-wlr lxqt.xdg-desktop-portal-lxqt ];
+    xdgOpenUsePortal = true;
+
+    config.common = {
+      default = [ "gtk" ];
+      "org.freedesktop.impl.portal.FileChooser" = "lxqt";
+    };
 
     # https://github.com/NixOS/nixpkgs/blob/6df2f671f1eca65dce7c78e547b44b0f60ca10de/nixos/modules/programs/wayland/sway.nix
     config.sway = {
-      # Use xdg-desktop-portal-gtk for every portal interface...
       default = [ "gtk" ];
-      # ... except for the ScreenCast, Screenshot and Secret
       "org.freedesktop.impl.portal.ScreenCast" = "wlr";
       "org.freedesktop.impl.portal.Screenshot" = "wlr";
-      # ignore inhibit bc gtk portal always returns as success,
-      # despite sway/the wlr portal not having an implementation,
-      # stopping firefox from using wayland idle-inhibit
       "org.freedesktop.impl.portal.Inhibit" = "none";
     };
   };
