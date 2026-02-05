@@ -2,7 +2,7 @@
 
 {
   virtualisation.docker = {
-    enable = true;
+    enable = false;
   };
 
   # Thunar thingies
