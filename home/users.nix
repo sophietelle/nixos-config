@@ -12,7 +12,7 @@ in
   users.users.${username} = {
     isNormalUser = true;
     description = displayName;
-    extraGroups = [ "networkmanager" "wheel" "plugdev" "docker" ];
+    extraGroups = [ "corectrl" "networkmanager" "wheel" "plugdev" "docker" ];
   };
 
   home-manager.users.${username} = { pkgs, ... }: {
