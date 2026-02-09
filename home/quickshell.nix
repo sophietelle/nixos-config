@@ -6,6 +6,6 @@
   programs.quickshell = {
     enable = true;
     systemd.enable = true;
-    activeConfig = toString ./quickshell;
+    activeConfig = toString ../quickshell;
   };
 }
