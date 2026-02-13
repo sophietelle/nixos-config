@@ -12,16 +12,10 @@
     # duplication and simultaneously having the newest possible versions of packages if
     # they are used in another input flake.
     nix-gaming = { url = "github:fufexan/nix-gaming"; inputs.nixpkgs.follows = "nixpkgs"; };
-    nix-cachyos-kernel = { url = "github:xddxdd/nix-cachyos-kernel/release"; inputs.nixpkgs.follows = "nixpkgs"; };
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
     stylix = { url = "github:nix-community/stylix"; inputs.nixpkgs.follows = "nixpkgs"; };
     ida-pro = { url = "path:./packages/ida-pro"; inputs.nixpkgs.follows = "nixpkgs"; };
     binaryninja = { url = "path:./packages/binaryninja"; inputs.nixpkgs.follows = "nixpkgs"; };
-  };
-
-  nixConfig = {
-    substituters = [ "https://attic.xuyh0120.win/lantian" "https://cache.nixos.org/" ];
-    trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" ];
   };
 
   outputs = { self, nixpkgs, ... } @ inputs: {
@@ -35,12 +29,19 @@
             networking.hostName = nixpkgs.lib.mkDefault "base";
           }
 
+          {
+            # https://nixos-and-flakes.thiscute.world/nixpkgs/overlays
+            nixpkgs.overlays = [
+              inputs.ida-pro.overlays.default
+              inputs.binaryninja.overlays.default
+            ];
+          }
+
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
 
           ./themes/main.nix
 
-          ./desktop/overlays.nix
           ./desktop/nix-config.nix
 
           ./desktop/bootloader.nix

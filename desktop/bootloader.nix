@@ -12,7 +12,7 @@
       theme = "bgrt";
     };
 
-    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto;
+    kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "boot.shell_on_fail"
 
