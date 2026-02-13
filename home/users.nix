@@ -23,6 +23,7 @@ in
       ./fastfetch.nix
       ./fuzzel.nix
       # ./waybar.nix
+      ./alacritty.nix
       ./swaybg.nix
       ./zed.nix
       ./quickshell.nix
@@ -37,7 +38,6 @@ in
 
     programs = {
       home-manager.enable = true;
-      alacritty.enable = true;
       firefox.enable = true;
     };
 

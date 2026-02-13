@@ -3,7 +3,7 @@
 let
   mod = "SUPER"; # Main key of Sway
 
-  terminal = "alacritty";
+  terminal = "alacritty msg create-window";
   explorer = "thunar";
   launcher = "fuzzel";
 
