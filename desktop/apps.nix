@@ -5,6 +5,8 @@
     enable = false;
   };
 
+  programs.gamemode.enable = true;
+
   # Thunar thingies
   services.gvfs.enable = true; # Trash folder
   services.tumbler.enable = true; # Thumbnails
