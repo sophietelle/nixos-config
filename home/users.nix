@@ -34,6 +34,10 @@ in
       xfce.thunar
       xfce.thunar-archive-plugin
       mpv
+
+      lxqt.lxqt-archiver
+      zip
+      unzip
     ];
 
     programs = {
