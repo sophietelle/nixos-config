@@ -12,7 +12,7 @@
     Name=osu! (custom)
     # https://download.nvidia.com/XFree86/Linux-x86_64/525.78.01/README/openglenvvariables.html
     # https://github.com/PipeWire/pipewire?tab=readme-ov-file#usage
-    Exec=env PIPEWIRE_LATENCY=256/44100 __GL_MaxFramesAllowed=1 __GL_SYNC_TO_VBLANK=0 obs-gamecapture osu! %U
+    Exec=env PIPEWIRE_LATENCY=128/48000 __GL_MaxFramesAllowed=1 vblank_mode=0 __GL_SYNC_TO_VBLANK=0 obs-gamecapture osu! %U
     Categories=Game
     Comment=A free-to-win rhythm game. Rhythm is just a *click* away!
     SingleMainWindow=true
