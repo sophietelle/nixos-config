@@ -9,12 +9,6 @@ let
 
   keyboards = "us,ru,ua";
 
-  # Path to a wallpaper. toString with a relative argument
-  # will reference a file in the flake folder. To use another
-  # path not in a flake, just replace it with a string, e.g.
-  # wallpaper = "/home/sophie/wallpapers/cool-wallpaper.png";
-  wallpaper = toString ../wallpapers/v3.png;
-
   screenshot = "grimshot copy screen";
   windowshot = "grimshot copy anything";
 in
@@ -46,8 +40,6 @@ in
         "xkb_layout" = keyboards;
         "xkb_options" = "grp:caps_toggle";
       };
-
-      output."*".bg = "${wallpaper} fill";
 
       gaps = {
         # Make top margin non-existent to better blend in
