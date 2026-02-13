@@ -76,6 +76,7 @@
         modules = self.nixosConfigurations.base._module.args.modules ++ [
           { networking.hostName = "laptop"; }
 
+          ./desktop/doas.nix
           ./machine-specific/tablet-rules.nix
           ./machine-specific/display-overclock.nix
           ./machine-specific/broadcom-bt.nix
