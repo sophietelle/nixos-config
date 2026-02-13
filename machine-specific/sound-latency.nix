@@ -4,9 +4,9 @@
 let
   inputMatch = "Family 17h/19h/1ah HD Audio Controller"; # wpctl status + wpctl inspect <id>
 
-  quantum = 128;
+  quantum = 256;
   rate = 48000;
-  format = "S32LE";
+  format = "S16_LE";
 
   qr = "${toString quantum}/${toString rate}";
 in
@@ -21,6 +21,8 @@ in
           actions = {
             update-props = {
               "default.clock.min-quantum" = quantum;
+              "default.clock.quantum" = quantum;
+              "default.clock.max-quantum" = quantum;
             };
           };
         }];
@@ -34,7 +36,7 @@ in
             ];
             args = {
               "nice.level" = -15;
-              "rt.prio" = 88;
+              "rt.prio" = 99;
               "rt.time.soft" = 200000;
               "rt.time.hard" = 200000;
             };
