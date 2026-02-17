@@ -1,3 +1,4 @@
+# A smaller and safer replacement for sudo.
 {
   security.doas.enable = true;
   security.sudo.enable = false;
