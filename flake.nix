@@ -80,7 +80,6 @@
           ./machine-specific/tablet-rules.nix
           ./machine-specific/display-overclock.nix
           ./machine-specific/broadcom-bt.nix
-          ./machine-specific/external-mounts.nix
           ./machine-specific/nvidia.nix
           ./machine-specific/keyboard-udev.nix
           ./machine-specific/sound-latency.nix
