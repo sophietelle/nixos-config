@@ -37,7 +37,7 @@ in
     ida-pro
     binaryninja
 
-    telegram-desktop
+    _64gram
     vesktop
     spotify
     transmission_4-qt

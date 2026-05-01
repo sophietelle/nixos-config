@@ -6,23 +6,22 @@
 let
   # Adapt if sound corruption happens
   # Good values: 32, 64, 96, 128
-  latency = "64";
+  latency = "256";
   rate = "44100";
 
   osuEnv = [
     # https://github.com/PipeWire/pipewire?tab=readme-ov-file#usage
-    "PIPEWIRE_LATENCY=${latency}"
+    "PIPEWIRE_LATENCY=${latency}/${rate}"
     "PIPEWIRE_QUANTUM=${latency}"
-    "PIPEWIRE_RATE=${rate}"
-    "PIPEWIRE_NODE=\"{node.latency=${latency}/${rate}}\""
+    "PIPEWIRE_NODE={node.latency=${latency}/${rate}}"
     # https://download.nvidia.com/XFree86/Linux-x86_64/525.78.01/README/openglenvvariables.html
     "__GL_MaxFramesAllowed=1"
     "__GL_SYNC_TO_VBLANK=0"
     "vblank_mode=0"
 
-    "obs-gamecapture"
     # programs.gamemode.enable in nix system config
     "gamemoderun"
+    "obs-gamecapture"
   ];
 in
 {

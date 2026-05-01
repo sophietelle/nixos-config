@@ -6,7 +6,7 @@
         "title"
         "separator"
         "os"
-        "host"
+        # "host"
         "kernel"
         "packages"
         "shell"
