@@ -1,3 +1,6 @@
+## WARNING: this config is dogshit, continue with caution
+My latest config: https://github.com/sophietelle/nixos-mk2
+
 ## Sophie's NixOS flake
 <a href="https://ibb.co/Cs7t0syq"><img src="https://i.ibb.co/JF7dkFTN/image.png" alt="image" border="0"></a>
 <a href="https://ibb.co/nMQd7V6x"><img src="https://i.ibb.co/KxV42QbT/image.png" alt="image" border="0"></a>
